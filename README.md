@@ -31,12 +31,12 @@ In short my aim is to create an application that Create, Read, Update and Delete
 ### Trello Board
 ### Entity Relationship Diagram
 My first ERD with one to many relationship .
-<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/Database.png" alt="First ERD"/>
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/Database.png" alt="First ERD"/>
 <br/>
 My original ERD was a one-to-many relationship-diagram which is makes it fairly good ERD to follow for this project but to develop it further I have added an
 extra relationship:
 <div style="block;"> 
-<img align="right" src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/Database2.png" alt="Second ERD"/>
+<img align="right" src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/Database2.png" alt="Second ERD"/>
 
 
 
