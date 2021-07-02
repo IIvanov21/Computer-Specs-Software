@@ -28,6 +28,9 @@ In short my aim is to create an application that Create, Read, Update and Delete
 ## Architecture
 
 ### Risk Assessment
+Risk Assement table analyses the possible risks I could encounter during the development and management of the project.
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/RiskAssesment.png" alt="Risk Assesment" />
+All the highlighted rows were added later on during the development process after they became clear.
 ### Trello Board
 ### Entity Relationship Diagram
 My first ERD with one to many relationship .
