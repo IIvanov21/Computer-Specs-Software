@@ -71,10 +71,7 @@ class ReadBuildEntry(FlaskForm):
 
 class UpdateBuildEntry(FlaskForm):
     build_name = StringField("Build name:",validators=[DataRequired()])
+    new_build_name = StringField("New Build name:",validators=[DataRequired()])
+
     submit = SubmitField('Confirm')
-    mb_name = StringField("Motherboard name:")
-    upmb_name = StringField("Motherboard name:",validators=[DataRequired()])
-    cpu_name = StringField("CPU name:")
-    upcpu_name = StringField("CPU name:",validators=[DataRequired()])
-    case_name = StringField("Case name:")
-    upcase_name = StringField("Case name:",validators=[DataRequired()])      
+        
