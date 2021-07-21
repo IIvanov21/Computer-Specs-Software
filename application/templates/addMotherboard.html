@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Creating or Adding new parts listing</title>
+    </head>
+    <body>
+        <div class='form'>
+            <form method='POST' action=''>
+                {{ motherboard_form.hidden_tag() }}
+                <h2>Build Name</h2>
+                {{ motherboard_form.name.label }} {{ motherboard_form.name }}
+                <h2>Motherboard Specifications</h2>
+                {{ motherboard_form.keyType.label }} {{ motherboard_form.keyType }}
+                <br>
+                {{ motherboard_form.make.label }} {{ motherboard_form.make }}
+                <br>
+                {{ motherboard_form.model.label }} {{ motherboard_form.model }}
+                <br>
+                {{ motherboard_form.series.label }} {{ motherboard_form.series }}
+                
+                <button id="submit">Submit</button>
+            </form>
+           
+        </div>
+    </body>
+</html>
