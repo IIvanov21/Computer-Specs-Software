@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Deleting parts listing</title>
+    </head>
+    <body>
+        <div class='form'>
+            <form method='POST' action=''>
+                {{ delete_form.hidden_tag() }}
+                <h2>Computer Case</h2>
+                {{ delete_form.build_name.label }} {{ delete_form.build_name }}
+                {{ delete_form.section.label }} {{ delete_form.section }}
+                <br>
+                {{ delete_form.submit }}
+                {{ message }}
+            </form>
+
+        </div>
+    </body>
+</html>
+<h2>Steps for deleting a build:</h2>
+<p>1.You can delete a build and it's associated parts by entering its name above!</p> 
+<p>2.Use the links below to delete parts from your build.</p> 
+<a href="{{url_for('updateMotherboard')}}"> <h2>Delete Motherboard</h2></a>
+<a href="{{url_for('updateCase')}}"> <h2>Delete Case</h2></a>
+<a href="{{url_for('updateCPU')}}"> <h2>Delete CPU</h2></a>

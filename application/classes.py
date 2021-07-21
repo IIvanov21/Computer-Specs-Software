@@ -75,3 +75,8 @@ class UpdateBuildEntry(FlaskForm):
 
     submit = SubmitField('Confirm')
         
+class DeleteBuildEntry(FlaskForm):
+    build_name = StringField("Build name:",validators=[DataRequired()])
+    section = SelectField("Select section to delete: ",choices=[("All","All"),("Motherboard","Motherboard"),("Case","Case"),("CPU","CPU")])
+    submit = SubmitField('Confirm')
+  

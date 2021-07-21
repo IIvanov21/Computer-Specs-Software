@@ -5,7 +5,7 @@ from flask import Flask, render_template, request
 from wtforms import SubmitField
 from application import app, db
 from application.classes import Motherboard,CPU,ComputerCase, Build
-from application.classes import CreateCaseEntry,CreateCPUEntry,CreateMotherBoardEntry,CreateBuildEntry,ReadBuildEntry,UpdateBuildEntry
+from application.classes import CreateCaseEntry,CreateCPUEntry,CreateMotherBoardEntry,CreateBuildEntry,ReadBuildEntry,UpdateBuildEntry,DeleteBuildEntry
 
 @app.route('/add',methods=['GET','POST'])
 def add():
@@ -214,3 +214,42 @@ def updateMotherboard():
             error = 'Updated your motherboard choice!'
         else: error = 'Failed to submit!'
     return render_template('addMotherboard.html',motherboard_form=motherboard_form,message=error)
+
+@app.route('/delete',methods=['GET','POST'])
+def delete():
+    delete_form=DeleteBuildEntry()
+    error=""
+    if request.method == 'POST':
+        build_name=delete_form.build_name.data
+        delete_section=delete_form.section.data
+        builddata=Build().query.filter_by(name=build_name).first()
+        if builddata is None:
+            error="Build name doesnt exist.. Try again!"
+        elif delete_form.validate() and delete_section == "All" :
+            builddata=Build().query.filter_by(name=build_name).first()
+            mbdata=Motherboard().query.filter_by(build_id=builddata.id).first()
+            cpudata=CPU().query.filter_by(build_id=builddata.id).first()
+            casedata=ComputerCase().query.filter_by(build_id=builddata.id).first()
+            db.session.delete(builddata)
+            db.session.delete(mbdata)
+            db.session.delete(cpudata)
+            db.session.delete(casedata)
+            db.session.commit()
+            error="Succefully deleted the selected build!"
+        elif  delete_form.validate() and delete_section == "Motherboard" :
+            mbdata=Motherboard().query.filter_by(build_id=builddata.id).first()
+            db.session.delete(mbdata)
+            db.session.commit()
+            error="Deleted the motherboard choice for this build!"
+        elif  delete_form.validate() and delete_section == "Case" :
+            casedata=ComputerCase().query.filter_by(build_id=builddata.id).first()
+            db.session.delete(casedata)
+            db.session.commit()
+            error="Deleted the case choice for this build!"
+        elif  delete_form.validate() and delete_section == "CPU" :
+            cpudata=CPU().query.filter_by(build_id=builddata.id).first()
+            db.session.delete(cpudata)
+            db.session.commit()
+            error="Deleted the CPU choice for this build!"
+    return render_template('delete.html',delete_form=delete_form,message=error)
+    
