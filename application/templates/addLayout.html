@@ -1,5 +1,24 @@
-<h1>Create your unique build!</h1>
-{% include "addCPU.html" %}
-{% include "addMotherboard.html" %}
+<html>
+    <head>
+        <title>Creating or Adding new parts listing</title>
+    </head>
+    <body>
+        <div class='form'>
+            <form method='POST' action=''>
+                {{ build_form.hidden_tag() }}
+                <h2>Computer Case</h2>
+                {{ build_form.name.label }} {{ build_form.name }}
+                {{ build_form.submit }}
+                {{ message }}
+            </form>
 
+        </div>
+    </body>
+</html>
+<h2>Steps for creating a build:</h2>
+<p>1.Create a build name to asscociate with your choices.</p> 
+<p>2.Use the links below to choose parts for your build.</p> 
+<a href="{{url_for('addMotherboard')}}"> <h2>Motherboard</h2></a>
+<a href="{{url_for('addCase')}}"> <h2>Case</h2></a>
+<a href="{{url_for('addCPU')}}"> <h2>CPU</h2></a>
 

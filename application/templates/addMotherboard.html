@@ -6,9 +6,9 @@
         <div class='form'>
             <form method='POST' action=''>
                 {{ motherboard_form.hidden_tag() }}
-                <h2>Build Name</h2>
-                {{ motherboard_form.name.label }} {{ motherboard_form.name }}
                 <h2>Motherboard Specifications</h2>
+                {{ motherboard_form.build_name.label }}{{ motherboard_form.build_name }}
+                <br>
                 {{ motherboard_form.keyType.label }} {{ motherboard_form.keyType }}
                 <br>
                 {{ motherboard_form.make.label }} {{ motherboard_form.make }}
@@ -16,10 +16,13 @@
                 {{ motherboard_form.model.label }} {{ motherboard_form.model }}
                 <br>
                 {{ motherboard_form.series.label }} {{ motherboard_form.series }}
-                
-                <button id="submit">Submit</button>
+                <br>
+                {{ motherboard_form.submit}} 
+                <br>
+                {{message}}
             </form>
            
         </div>
     </body>
 </html>
+<a href="{{url_for('add')}}"> <h2>Build Home</h2></a>

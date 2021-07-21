@@ -7,15 +7,20 @@
             <form method='POST' action=''>
                 {{ cpu_form.hidden_tag() }}
                 <h2>Central Processing Unit</h2>
+                {{ cpu_form.build_name.label }}{{ cpu_form.build_name }}
+                <br>
                 {{ cpu_form.make.label }} {{ cpu_form.make }}
                 <br>
                 {{ cpu_form.model.label }} {{ cpu_form.model }}
                 <br>
                 {{ cpu_form.series.label }} {{ cpu_form.series }}
                 <br>
-                <button id="submit">Submit</button>
+                {{ cpu_form.submit}} 
+                <br>
+                {{message}}
             </form>
            
         </div>
     </body>
 </html>
+<a href="{{url_for('add')}}"> <h2>Build Home</h2></a>

@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Reading</title>
+    </head>
+    <body>
+        <div class='form'>
+            <form method='POST' action=''>
+                {{ read_form.hidden_tag() }}
+                <h2>Get your build list</h2>
+                {{ read_form.build_name.label }} {{ read_form.build_name }}
+                <br>
+                {{ read_form.submit}} 
+                <br>
+                {{message}}
+                <br>
+                {% if read_form.mb_name.data == null or read_form.mb_name.data == "" %}
+                    {{ read_form.mb_name.label}} You havent added a motherboard!<a href="{{url_for('addMotherboard')}}"> Select Motherboard!</a>
+                {% else %}   
+                    {{ read_form.mb_name.label}} {{read_form.mb_name.data}}
+                {% endif %}
+                <br>
+                {% if read_form.cpu_name.data == null or read_form.cpu_name.data == "" %}
+                    {{ read_form.cpu_name.label}} You havent added a CPU!<a href="{{url_for('addCPU')}}"> Select CPU!</a>
+                {% else %} 
+                    {{ read_form.cpu_name.label}} {{read_form.cpu_name.data}}
+                {% endif %}
+                <br>
+                {% if read_form.case_name.data == null or read_form.case_name.data == "" %}
+                    {{ read_form.case_name.label}} You havent added a case!<a href="{{url_for('addCase')}}"> Select Case!</a>
+                {% else %}
+                    {{ read_form.case_name.label}} {{read_form.case_name.data}}
+                {% endif %}
+            </form>
+           
+        </div>
+    </body>
+</html>

@@ -31,27 +31,50 @@ class ComputerCase(db.Model):
     make = db.Column(db.String(60),nullable=False)
     model= db.Column(db.String(60), nullable=False)
     build_id = db.Column(db.Integer, db.ForeignKey('build.id'), nullable = False)
+    submit = SubmitField('Confirm')
 
 
 class CreateCPUEntry(FlaskForm):
+    build_name = StringField("Build name:",validators=[DataRequired()])
     make = SelectField("CPU Manufacturer:",choices=[("AMD","AMD"),("Intel","Intel")])
     series = StringField("CPU Series:",validators=[DataRequired()])
     model = StringField("CPU Model: ",validators=[DataRequired()])
-    #submit2 = SubmitField('Confirm')
+    submit = SubmitField('Confirm')
 
 
 class CreateCaseEntry(FlaskForm):
+    build_name = StringField("Build name:",validators=[DataRequired()])
     keyType = SelectField("Case Type: ", choices=[("XL-ATX","XL-ATX"),("EATX","EATX"),("ATX","ATX"),("mATX/ITX","mATX/ITX"),("MINI-ITX","MINI-ITX")])
     make = StringField("Case Manufacturer: ",validators=[DataRequired()])
     model = StringField("Case Model:",validators=[DataRequired()])
-    #submit3 = SubmitField('Confirm')
+    submit = SubmitField('Confirm')
 
 
 class CreateMotherBoardEntry(FlaskForm):
-    name = StringField("Build name:",validators=[DataRequired()])
+    build_name = StringField("Build name:",validators=[DataRequired()])
     keyType = SelectField("Motherboard Type: ", choices=[("XL-ATX","XL-ATX"),("EATX","EATX"),("ATX","ATX"),("mATX/ITX","mATX/ITX"),("MINI-ITX","MINI-ITX")])
     make = SelectField("Motheraboard Manufacturer:",choices=[("Asus","Asus"),("Aourus","Aourus"),("MSI","MSI"),("ASRock","ASRock")])
     model = StringField("Motherboard Model: ",validators=[DataRequired()])
     series = StringField("Motherboard Series:",validators=[DataRequired()])
-    #submit1 = SubmitField('Confirm')
+    submit = SubmitField('Confirm')
 
+class CreateBuildEntry(FlaskForm):
+    name = StringField("Build name:",validators=[DataRequired()])
+    submit = SubmitField('Confirm')
+
+class ReadBuildEntry(FlaskForm):
+    build_name = StringField("Build name:",validators=[DataRequired()])
+    submit = SubmitField('Confirm')
+    mb_name = StringField("Motherboard name:")
+    cpu_name = StringField("CPU name:")
+    case_name = StringField("Case name:")
+
+class UpdateBuildEntry(FlaskForm):
+    build_name = StringField("Build name:",validators=[DataRequired()])
+    submit = SubmitField('Confirm')
+    mb_name = StringField("Motherboard name:")
+    upmb_name = StringField("Motherboard name:",validators=[DataRequired()])
+    cpu_name = StringField("CPU name:")
+    upcpu_name = StringField("CPU name:",validators=[DataRequired()])
+    case_name = StringField("Case name:")
+    upcase_name = StringField("Case name:",validators=[DataRequired()])      

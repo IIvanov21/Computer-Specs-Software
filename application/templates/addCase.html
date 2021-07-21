@@ -7,15 +7,20 @@
             <form method='POST' action=''>
                 {{ case_form.hidden_tag() }}
                 <h2>Computer Case</h2>
+                {{ case_form.build_name.label }}{{ case_form.build_name }}
+                <br>
                 {{ case_form.keyType.label }} {{ case_form.keyType }}
                 <br>
                 {{ case_form.make.label }} {{ case_form.make }}
                 <br>
                 {{ case_form.model.label }} {{ case_form.model }}
                 <br>
-                <button id="submit">Submit</button>
+                {{ case_form.submit}} 
+                <br>
+                {{message}}
             </form>
            
         </div>
     </body>
 </html>
+<a href="{{url_for('add')}}"> <h2>Build Home</h2></a>
