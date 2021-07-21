@@ -74,7 +74,9 @@ extra relationship. A computer originally consists of multiple parts and to show
 <div style="block;"> 
 <img align="right" src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/Database2.png" alt="Second ERD"/>
 Through the use of the Motherboard table I have decided to use a many-to-many relationship by braking it up in multiple many-to-one relationships. A computer system should be a many-to-many relationship but taking many-to-one relationship aproach will allow me to construct dependecies which in this case is introducing compatability relationships between components. This aproach will also make it easier for a users to find a component that is already in the database system and easily introduce further features such as Cooler component to cooldown the CPU. 
-
+<div style="block;"> 
+<img align="right" src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/Database3.png" alt="Third ERD"/>
+When developing the application I found the relationship between Motherboard and other components doesnt work together well. Therefore I isolated Motherboard as a single component and created an extra diagram called Build which ties in all the components together and represents relationships better between componenets.
 
 ### Analysis of Testing
 ### Continuous Integration
