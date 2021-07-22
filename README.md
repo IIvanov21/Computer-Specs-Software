@@ -79,7 +79,22 @@ Through the use of the Motherboard table I have decided to use a many-to-many re
 When developing the application I found the relationship between Motherboard and other components doesnt work together well. Therefore I isolated Motherboard as a single component and created an extra diagram called Build which ties in all the components together and represents relationships better between componenets.
 
 ### Analysis of Testing
+The project follows only unit and integration testing which cover the scope of the application and allows us me to fully test it's given CRUD functionality. There are other forms of testing which can be implemented but are outside the scope of the project. These forms of testing mentioned bellow dont have to be followed sequientially and allow full testing for a bigger project.
+   * API testing - testers validate that API connections and responses function as intended.
+   * UI testing - testing of UI controls like buttons, menus and text input to ensure that the experience flow and features chosen are optimal for the user experience.
+   * System testing - validate the complete and integrated software package to make sure it meets requirements.
+   * White-box testing - tests several aspects of the software, such as predefined inputs and expected outputs, as well as decision branches, loops and statements in the code.
+   * Black-box testing - testing against a system where the internal code, paths and infrastructure are not visible.
+   * Acceptance testing - ensure that the end user can achieve the goals set in the business requirements.
+   * Alpha testing - uses internal team members to evaluate the product.
+   * Beta testing - a soft launch, enabling you to get feedback from real users who have no prior knowledge of the app.
+   * Production testing - attempts to discover and triage user-reported defects as quickly as possible.
+The plan below follows test that will be perfomed when the full functionality for my CRUD application is implemented. As more functions were implemented I have gradually added multiple tests:
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/TestAnalysis.png" alt="Test Analysis"/>
+   
 ### Continuous Integration
+
+   
 ### Jenkins Script
 
 ## Development
