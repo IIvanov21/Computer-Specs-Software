@@ -200,6 +200,9 @@ The delete page simply takes in a build name and a desired choice. The all choic
 ## Footer
 
 ### Future Improvements
+   * A really good feature improvement will be having user control. The user control will allow people to create their own accounts which will allow them to create builds which can be easily shared with other users. User and Pass functionality will also prevent other people accessing unauthorized builds and changing them.
+   * Another feature will be like mentioned in the proposal introduce further relationships between components. At the moment people can add CPU part from AMD to a build list with a motherboard part for an Intel CPU. Introducing further constraints will make the application more robust and reliable.
+   * Since the goal of the application is to be a computer specification list. A future imporvement will be adding functionality for all the components need by a Computer. Such as Power Supply, Cooler, Graphics card etc.. This feature will allow a user to build a fully speced computer parts list.
 ### Author
 Ivaylo Ivanov
 ### Acknowledgements
