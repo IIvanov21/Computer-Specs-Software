@@ -13,6 +13,10 @@
 * [Development](#development)
     * [Unit Testing](#unit-testing)
     * [Front-End Design](#front-end)
+    * [Read Page](#read-page)
+    * [Add Page](#add-page)
+    * [Update Page](#update-page)
+    * [Delete Page](#delete-page)
     * [Integration Testing](#integration-testing)
 * [Footer](#footer)
 
@@ -133,6 +137,33 @@ If one of the test cases fails the entire build is marked as a failure in the Je
 <img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/FailUnitTesting.png" alt="Unit Testing Fail"/>
    
 ### Front-End
+#### Read Page
+The read page allows the user to list an existing build in the database. To list it they simply need to enter the name of the build. Once a build is entered below a list of each part in the build is shown. If the build doesn't exist or a certain part hasn't been added the use will be notified. There are links below the list to access other functionality of the application. The CRUD functionality covered by this is READ.
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/ReadPage.png" alt="ReadPage"/>
+#### Add Page
+The Add page contains a guide which tells the user how to create a new build list. The Add page cotains extra links for each component such as CPU, Motherboard and Case. Once the use has created a build name they get notified with a message and propmted to continue to each add page for a component. In the individual page for each component there is a form which allows the user to create an entry to the database for that component and tie it to the build database. If the user tries to use a non-existant name the application will prompt them to create a name first with a notification. The CRUD functionality covered by the Add Page is Read and Create.
+Add Page:
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/AddPage.png" alt="AddPage"/>
+Add Motherboard Page:
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/AddMotherboard.png" alt="AddMotherboard"/>
+Add CPU Page:
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/AddCPU.png" alt="AddCPU"/>
+Add Case Page:
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/AddCase.png" alt="AddCase"/>
+#### Update Page
+The functionality for the Update Page for taking information is the same as the AddPage. It will let the use change the name of a build and parts associated with that build. The difference is when Updaitng the information in the database. Instead of creating a new entry the Update function will look in the database of each component with the associated build id and update the information. The CRUD functionality here is Read and Update.
+Update Page:
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/UpdatePage.png" alt="UpdatePage"/>
+Update Motherboard Page:
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/UpdateMotherboard.png" alt="UpdateMotherboard"/>
+Update CPU Page:
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/UpdateCPU.png" alt="UpdateCPU"/>
+Update Case Page:
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/UpdateCase.png" alt="UpdateCase"/>
+#### Delete Page
+The delete page simply takes in a build name and a desired choice. The all choice will delete every component associated with the build and the build itself. The other choices "CPU", "Case","Motherboard" will delete the relavent component associated with the build. The CRUD functionality covered by this page is Read and Delete.
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/DeletePage.png" alt="DeletePage"/>
+   
 ### Integration Testing
 
 ## Footer
@@ -141,3 +172,6 @@ If one of the test cases fails the entire build is marked as a failure in the Je
 ### Author
 Ivaylo Ivanov
 ### Acknowledgements
+Oliver Nichols
+Ryan Wright
+Victoria Sacre
