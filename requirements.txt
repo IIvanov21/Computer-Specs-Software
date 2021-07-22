@@ -6,3 +6,4 @@ wtforms
 pymysql
 selenium
 pytest
+pytest-cov
