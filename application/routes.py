@@ -35,8 +35,8 @@ def addMotherboard():
         motherboard_make=motherboard_form.make.data
         motherboard_model=motherboard_form.model.data
         motherboard_series=motherboard_form.series.data
-  
         builddata=Build().query.filter_by(name=build_name).first()
+
         if builddata is None:
             error="Build name doesnt exist.. Try again!"
         elif  motherboard_form.validate():
@@ -46,7 +46,6 @@ def addMotherboard():
             db.session.commit()
 
             error = 'Added new motherboard'
-        else: error = 'Failed to submit!'
     return render_template('addMotherboard.html',motherboard_form=motherboard_form,message=error)
 
 @app.route('/add/cpu',methods=['GET','POST'])
@@ -60,6 +59,7 @@ def addCPU():
         cpu_series=cpu_form.series.data
         cpu_model=cpu_form.model.data
         builddata=Build().query.filter_by(name=build_name).first()
+
         if builddata is None:
             error="Build name doesnt exist.. Try again!"
         elif cpu_form.validate():
@@ -67,7 +67,6 @@ def addCPU():
             db.session.add(new_cpu_entry)
             db.session.commit()
             error= "Added a CPU!"
-        else: error= "Failed to add a CPU!"
     return render_template('addCPU.html',cpu_form=cpu_form,message=error)
 
 @app.route('/add/case',methods=['GET','POST'])
@@ -82,6 +81,7 @@ def addCase():
         case_model=case_form.model.data
         build_name=case_form.build_name.data
         builddata=Build().query.filter_by(name=build_name).first()
+
         if builddata is None:
             error="Build name doesnt exist.. Try again!"
         elif case_form.validate():
@@ -89,8 +89,6 @@ def addCase():
             db.session.add(new_case_entry)
             db.session.commit()
             error = "Added a Case!"
-        else: 
-            error = "Failed to add a Case!"
     return render_template('addCase.html',case_form=case_form,message=error)    
 
 
@@ -149,14 +147,13 @@ def updateCPU():
         if builddata is None:
             error="Build name doesnt exist.. Try again!"
         elif cpudata is None:
-            error="Couldn't find the desired CPU ensure it has been added!"
+            error="Couldnt find the desired CPU ensure it has been added!"
         elif cpu_form.validate():
             cpudata.make=cpu_make
             cpudata.series=cpu_series
             cpudata.model=cpu_model
             db.session.commit()
             error= "Updated the CPU!"
-        else: error= "Failed to add a CPU!"
     return render_template('addCPU.html',cpu_form=cpu_form,message=error)
 
 @app.route('/update/case',methods=['GET','POST'])
@@ -181,8 +178,7 @@ def updateCase():
             casedata.model=case_model
             db.session.commit()
             error = "Updated your case choice!"
-        else: 
-            error = "Failed to add a Case!"
+        
     return render_template('addCase.html',case_form=case_form,message=error)    
 @app.route('/update/motherboard',methods=['GET','POST'])
 def updateMotherboard():
@@ -212,7 +208,7 @@ def updateMotherboard():
             db.session.commit()
 
             error = 'Updated your motherboard choice!'
-        else: error = 'Failed to submit!'
+        
     return render_template('addMotherboard.html',motherboard_form=motherboard_form,message=error)
 
 @app.route('/delete',methods=['GET','POST'])
@@ -226,14 +222,13 @@ def delete():
         if builddata is None:
             error="Build name doesnt exist.. Try again!"
         elif delete_form.validate() and delete_section == "All" :
-            builddata=Build().query.filter_by(name=build_name).first()
             mbdata=Motherboard().query.filter_by(build_id=builddata.id).first()
             cpudata=CPU().query.filter_by(build_id=builddata.id).first()
             casedata=ComputerCase().query.filter_by(build_id=builddata.id).first()
-            db.session.delete(builddata)
             db.session.delete(mbdata)
             db.session.delete(cpudata)
             db.session.delete(casedata)
+            db.session.delete(builddata)
             db.session.commit()
             error="Succefully deleted the selected build!"
         elif  delete_form.validate() and delete_section == "Motherboard" :
