@@ -92,29 +92,33 @@ The project follows only unit and integration testing which cover the scope of t
 The plan below follows test that will be perfomed when the full functionality for my CRUD application is implemented. As more functions were implemented I have gradually added multiple tests:
 <img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/TestAnalysis.png" alt="Test Analysis"/>
 When designing the test cases it helped me outline problems in my code which I had to adjust or simply implement new check that will prevent the overwriting and duplication of data. Such a feature is especially the build name. Allowing the build name to be unique will prevent the user creating duplication and getting the wrong information stored into the database.
+   
 ### Continuous Integration
-
+Continuous intergration allows me to automatically integrate code into my CRUD application through the focus on automatic testing. In my aproach I develop the application using Python which then gets pushed and pulled from the Version Control System GitHub. Jenkins with the provided script will get the repository and build it. This allows Jenkins to run unit and integration testing using Pytest and provide a report with Pytest coverage that will let us understand what code needs refactoring.
+  
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/Pipeline.png" alt="CI Pipeline"/>
    
 ### Jenkins Script
-*This script will allow Jenkins the test every time.
-*Install dependecies that are needed for testing the script. The chrome driver is needed for integration testing.
-sudo apt-get install python3 python3-pip python3-venv chromium-browser wget unzip -y
-version=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$(chromium-browser --version | grep -oP 'Chromium \K\d+'))
-wget https://chromedriver.storage.googleapis.com/${version}/chromedriver_linux64.zip
-sudo unzip chromedriver_linux64.zip -d /usr/bin
-rm chromedriver_linux64.zip
+* This script will allow Jenkins to run the test every time.
+* Install dependecies that are needed for testing the script. The chrome driver is needed for integration testing.
+   * sudo apt-get install python3 python3-pip python3-venv chromium-browser wget unzip -y
+   * version=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$(chromium-browser --version | grep -oP 'Chromium \K\d+'))
+   * wget https://chromedriver.storage.googleapis.com/${version}/chromedriver_linux64.zip
+   * sudo unzip chromedriver_linux64.zip -d /usr/bin
+   * rm chromedriver_linux64.zip
 
-*Clone the appliation to ensure everything is stored correctly on Jenkins.
-git clone https://github.com/IIvanov21/Computer-Specs-Software.git
-cd Computer-Specs-Software
+* Clone the appliation to ensure everything is stored correctly on Jenkins.
+   * git clone https://github.com/IIvanov21/Computer-Specs-Software.git
+   * cd Computer-Specs-Software
 
-*Install pip requirements. Pip contains pytest and pytest-cov which allow you to get a report for the designed test cases and what they cover.
-python3 -m venv venv
-source venv/bin/activate
-pip3 install -r requirements.txt
+* Install pip requirements. Pip contains pytest and pytest-cov which allow you to get a report for the designed test cases and what they cover.
+   * python3 -m venv venv
+   * source venv/bin/activate
+   * pip3 install -r requirements.txt
 
-#Run the test
-python3 -m pytest --cov=application --cov-report=term-missing
+* Run the test
+   * python3 -m pytest --cov=application --cov-report=term-missing
+   
 ## Development
 
 ### Unit Testing
