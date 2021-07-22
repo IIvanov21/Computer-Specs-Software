@@ -96,13 +96,32 @@ When designing the test cases it helped me outline problems in my code which I h
 
    
 ### Jenkins Script
+*This script will allow Jenkins the test every time.
+*Install dependecies that are needed for testing the script. The chrome driver is needed for integration testing.
+sudo apt-get install python3 python3-pip python3-venv chromium-browser wget unzip -y
+version=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$(chromium-browser --version | grep -oP 'Chromium \K\d+'))
+wget https://chromedriver.storage.googleapis.com/${version}/chromedriver_linux64.zip
+sudo unzip chromedriver_linux64.zip -d /usr/bin
+rm chromedriver_linux64.zip
 
+*Clone the appliation to ensure everything is stored correctly on Jenkins.
+git clone https://github.com/IIvanov21/Computer-Specs-Software.git
+cd Computer-Specs-Software
+
+*Install pip requirements. Pip contains pytest and pytest-cov which allow you to get a report for the designed test cases and what they cover.
+python3 -m venv venv
+source venv/bin/activate
+pip3 install -r requirements.txt
+
+#Run the test
+python3 -m pytest --cov=application --cov-report=term-missing
 ## Development
 
 ### Unit Testing
 Unit testing allows me to separate the route functions for each component such as the add functions for the Create functionality, read functions for the Read functionality etc.. this ten allows me to test each function with given scenarious to ensure they work correctly. These tests are tied to a Jenkins Virtual Machine which runs them automatically after every push on a select version control system which in my case is Git. Jenkins will print out if the test cases are succeful and provide a coverage report to what lines of the code are being missed in the test cases.
 To run the test cases yourself follow the listed Jenkins steps above.
 <img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/UnitTesting.png" alt="Unit Testing"/>
+   
 If one of the test cases fails the entire build is marked as a failure in the Jenkins report.
    
 <img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/FailUnitTesting.png" alt="Unit Testing Fail"/>
