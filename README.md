@@ -65,6 +65,8 @@ All the highlighted rows were added later on during the development process afte
 The progress of the project is documented using Trello as it is well suited for a small scale project. The initials setup of the board looks as follows:
 <img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/KanBanBoard.jpg" alt="KanBanBoard" />
 The full access to the board is here:https://trello.com/b/2TDZNQXU/computer-specs-crud
+The updated Trello Board:
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/KanBanBoard2.jpg" alt="KanBanBoard2" />
 ### Entity Relationship Diagram
 My first ERD with one to many relationship .
 <img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/Database.png" alt="First ERD"/>
