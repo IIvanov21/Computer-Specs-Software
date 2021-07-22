@@ -91,7 +91,7 @@ The project follows only unit and integration testing which cover the scope of t
    * Production testing - attempts to discover and triage user-reported defects as quickly as possible.
 The plan below follows test that will be perfomed when the full functionality for my CRUD application is implemented. As more functions were implemented I have gradually added multiple tests:
 <img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/TestAnalysis.png" alt="Test Analysis"/>
-   
+When designing the test cases it helped me outline problems in my code which I had to adjust or simply implement new check that will prevent the overwriting and duplication of data. Such a feature is especially the build name. Allowing the build name to be unique will prevent the user creating duplication and getting the wrong information stored into the database.
 ### Continuous Integration
 
    
@@ -100,6 +100,12 @@ The plan below follows test that will be perfomed when the full functionality fo
 ## Development
 
 ### Unit Testing
+Unit testing allows me to separate the route functions for each component such as the add functions for the Create functionality, read functions for the Read functionality etc.. this ten allows me to test each function with given scenarious to ensure they work correctly. These tests are tied to a Jenkins Virtual Machine which runs them automatically after every push on a select version control system which in my case is Git. Jenkins will print out if the test cases are succeful and provide a coverage report to what lines of the code are being missed in the test cases.
+To run the test cases yourself follow the listed Jenkins steps above.
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/UnitTesting.png" alt="Unit Testing"/>
+If one of the test cases fails the entire build is marked as a failure in the Jenkins report.
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/UnitTestingFail.png" alt="Unit Testing Fail"/>
+   
 ### Front-End
 ### Integration Testing
 
