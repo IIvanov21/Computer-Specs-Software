@@ -190,5 +190,5 @@ class TestDelete(TestBase):
         response=self.client.post(url_for('delete'), data = dict(build_name='Potato',section="CPU"),follow_redirects=True)
         self.assertIn(b'Deleted the CPU choice for this build!',response.data)
     def test_delete_case(self):
-        response=self.client.post(url_for('delete'), data = dict(build_name='Potato',section="Case"),follow_redirects=True)
+        response=self.client.post(url_for('delete'), data = dict(build_name='Potato3',section="Case"),follow_redirects=True)
         self.assertIn(b'Deleted the case choice for this build!',response.data)
