@@ -7,3 +7,5 @@ pymysql
 selenium
 pytest
 pytest-cov
+python-decouple
+python-dotenv
