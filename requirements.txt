@@ -9,3 +9,4 @@ pytest
 pytest-cov
 python-decouple
 python-dotenv
+#File with all packages
