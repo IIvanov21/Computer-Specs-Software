@@ -5,7 +5,8 @@ __pycache__/
 chromedriver/
 # C extensions
 *.so
-
+#Pass files
+.env
 # Distribution / packaging
 .Python
 build/

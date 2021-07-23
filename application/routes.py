@@ -225,26 +225,29 @@ def delete():
             mbdata=Motherboard().query.filter_by(build_id=builddata.id).first()
             cpudata=CPU().query.filter_by(build_id=builddata.id).first()
             casedata=ComputerCase().query.filter_by(build_id=builddata.id).first()
-            db.session.delete(mbdata)
-            db.session.delete(cpudata)
-            db.session.delete(casedata)
+            if mbdata is not None:db.session.delete(mbdata)
+            if cpudata is not None:db.session.delete(cpudata)
+            if casedata is not None:db.session.delete(casedata)
             db.session.delete(builddata)
             db.session.commit()
             error="Succefully deleted the selected build!"
         elif  delete_form.validate() and delete_section == "Motherboard" :
             mbdata=Motherboard().query.filter_by(build_id=builddata.id).first()
-            db.session.delete(mbdata)
-            db.session.commit()
-            error="Deleted the motherboard choice for this build!"
+            if mbdata is not None:
+                db.session.delete(mbdata)
+                db.session.commit()
+                error="Deleted the motherboard choice for this build!"
         elif  delete_form.validate() and delete_section == "Case" :
             casedata=ComputerCase().query.filter_by(build_id=builddata.id).first()
-            db.session.delete(casedata)
-            db.session.commit()
-            error="Deleted the case choice for this build!"
+            if casedata is not None:
+                db.session.delete(casedata)
+                db.session.commit()
+                error="Deleted the case choice for this build!"
         elif  delete_form.validate() and delete_section == "CPU" :
             cpudata=CPU().query.filter_by(build_id=builddata.id).first()
-            db.session.delete(cpudata)
-            db.session.commit()
-            error="Deleted the CPU choice for this build!"
+            if cpudata is not None:
+                db.session.delete(cpudata)
+                db.session.commit()
+                error="Deleted the CPU choice for this build!"
     return render_template('delete.html',delete_form=delete_form,message=error)
     
