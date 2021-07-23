@@ -43,15 +43,15 @@ class TestBase(LiveServerTestCase):
         response = urlopen(f'http://localhost:{self.TEST_PORT}')
         self.assertEqual(response.code, 200)
 
-class TestRead(TestBase):
+#class TestRead(TestBase):
 
-    def submit_input(self, case): # custom method
-        self.driver.find_element_by_xpath('//*[@id="build_name"]').send_keys(case)
-        self.driver.find_element_by_xpath('//*[@id="submit"]').click()
+    #def submit_input(self, case): # custom method
+        #self.driver.find_element_by_xpath('//*[@id="build_name"]').send_keys(case)
+        #self.driver.find_element_by_xpath('//*[@id="submit"]').click()
     
-    def test_empty_validation(self):
-        self.submit_input('')
-        self.assertIn(url_for('read'), self.driver.current_url)
+    #def test_empty_validation(self):
+        #self.submit_input('')
+        #self.assertIn(url_for('read'), self.driver.current_url)
 
-        text = self.driver.find_element_by_xpath('/html/body/div/i').text
-        self.assertIn("The name field can't be empty!", text)
+        #text = self.driver.find_element_by_xpath('/html/body/div/i').text
+        #self.assertIn("The name field can't be empty!", text)

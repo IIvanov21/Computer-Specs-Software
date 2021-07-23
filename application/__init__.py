@@ -5,6 +5,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 import secrets
 from decouple import config
+
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = config('DATABASE_KEY')
