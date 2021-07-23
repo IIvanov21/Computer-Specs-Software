@@ -201,6 +201,7 @@ I tried to perform Integration Testing but it kept failing due to not being able
    
 <img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/Integration Test Fail.png" alt="Integration Test Fail"/>
 <br>
+
 ## Footer
 
 ### Future Improvements
