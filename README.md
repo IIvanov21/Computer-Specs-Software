@@ -196,7 +196,11 @@ The delete page simply takes in a build name and a desired choice. The all choic
 <img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/DeletePage.png" alt="DeletePage"/>
    
 ### Integration Testing
-
+I tried to perform Integration Testing but it kept failing due to not being able to find the correct webpage. I tried to research the problem and figure out a fix. The problem is shown in the picture below.
+ <br>
+   
+<img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/Integration Test Fail.png" alt="Integration Test Fail"/>
+<br>
 ## Footer
 
 ### Future Improvements
