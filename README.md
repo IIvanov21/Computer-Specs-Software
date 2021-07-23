@@ -128,7 +128,7 @@ Continuous intergration allows me to automatically integrate code into my CRUD a
 ## Development
 
 ### Unit Testing
-Unit testing allows me to separate the route functions for each component such as the add functions for the Create functionality, read functions for the Read functionality etc.. this ten allows me to test each function with given scenarious to ensure they work correctly. These tests are tied to a Jenkins Virtual Machine which runs them automatically after every push on a select version control system which in my case is Git. Jenkins will print out if the test cases are succeful and provide a coverage report to what lines of the code are being missed in the test cases.
+Unit testing allows me to separate the route functions for each component such as the add functions for the Create functionality, read functions for the Read functionality etc.. this then allows me to test each function with given scenario to ensure they work correctly. These tests are tied to a Jenkins Virtual Machine which runs them automatically after every push on a select version control system which in my case is Git. Jenkins will print out if the test cases are successful and provide a coverage report to what lines of the code are being missed in the test cases.
 To run the test cases yourself follow the listed Jenkins steps above.
 <img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/UnitTesting.png" alt="Unit Testing"/>
    
