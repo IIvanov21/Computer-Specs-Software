@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Updating new parts listing</title>
+    </head>
+    <body>
+        <div class='form'>
+            <form method='POST' action=''>
+                {{ update_form.hidden_tag() }}
+                <h2>Update</h2>
+                {{ update_form.build_name.label }} {{ update_form.build_name }}
+                {{ update_form.new_build_name.label }} {{ update_form.new_build_name }}
+                <br>
+                {{ update_form.submit }}
+                {{ message }}
+            </form>
+
+        </div>
+    </body>
+</html>
+<h2>Steps for updating a build:</h2>
+<p>1.You can update the name of your build above if you want.</p> 
+<p>2.Use the links below to update parts for your build.</p> 
+<a href="{{url_for('updateMotherboard')}}"> <h2>Update Motherboard</h2></a>
+<a href="{{url_for('updateCase')}}"> <h2>Update Case</h2></a>
+<a href="{{url_for('updateCPU')}}"> <h2>Update CPU</h2></a>
+<a href="{{url_for('read')}}"> <h2>Read Functions</h2></a>
