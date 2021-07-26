@@ -105,6 +105,8 @@ Continuous intergration allows me to automatically integrate code into my CRUD a
 <img src="https://github.com/IIvanov21/Computer-Specs-Software/blob/main/images/Pipeline.png" alt="CI Pipeline"/>
    
 ### Jenkins Script
+* First a protected script that contains your pass and injects variables for example:
+   * echo DATABASE_KEY=$(echo "mysql+pymysql://testname:testpass@host/databasename") >> .env
 * This script will allow Jenkins to run the test every time.
 * Install dependecies that are needed for testing the script. The chrome driver is needed for integration testing.
    * sudo apt-get install python3 python3-pip python3-venv chromium-browser wget unzip -y
